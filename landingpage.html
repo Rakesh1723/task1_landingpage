@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Watch</title>
+    <style>
+        body {
+            padding: 20px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .header {
+            background-color: #3712a7;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .header a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+    
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            margin-bottom: 40px;
+        }
+    
+        #home {
+            background-color: #3f11cbd1;
+            padding: 20px;
+        }
+
+        .watch-image {
+		    flex:1;
+            text-align:center;
+        }
+
+       .watch-image img {
+             max-width: 60%;
+             max-height:50%;
+             width: auto;
+             height: auto;
+        }
+
+        .description {
+            text-align: center;
+        }
+        .description h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .order-now-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .order-now-button a {
+            display: inline-block;
+            padding: 20px 60px;
+            background-color: #ff5c39;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .order-now-button a:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: skewX(-30deg) translateX(-30%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .order-now-button a:hover:before {
+            transform: skewX(-30deg) translateX(100%);
+        }
+
+        .order-now-button a:after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 80px;
+            background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+            z-index: -1;
+            transition: bottom 0.5s ease-in-out;
+        }
+
+        .order-now-button a:hover:after {
+            bottom: 0;
+        }
+    
+        #about {
+            background-color: #1032bc8a;
+            padding: 20px;
+        }
+		 .feature-image {
+           display: flex;
+           justify-content:left;
+           align-items:left;
+           height: 100vh;
+           background-color:#3712a7;
+           }
+		   p {
+             margin-bottom: 10px;
+            }
+		    .about-read-more {
+            display: inline-block;
+            padding:8px 16px;
+            border-radius: 999px;
+            background-color: #3f11cb;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+			margin-top:5px;
+          }
+		  .product-details {
+           display: flex;
+           flex-direction: column;
+         }
+        .new-release {
+            background-color: #0600ff;
+            color: #ffffff; 
+            padding: 5px 10px; 
+            margin-bottom: 5px; 
+           }
+
+        ul.right-bullets {
+           list-style: none;
+           padding: 0;
+           display: flex;
+           flex-direction: column;
+         }
+
+         ul.right-bullets li:before {
+           content: "\027A4";
+           margin-right: 20px;
+           color: #fff;
+           padding-left: 20px;
+		   
+         }
+		  ul.right-bullets li {
+            font-size: 18px; 
+          }
+
+
+	
+		 #features {
+            background-color: #3f11cbd1;
+            padding: 20px;
+        }
+		.feature {
+           width: 300px;
+           margin: 10px;
+           padding: 20px;
+           text-align: center;
+           background-color: #fff;
+        }
+		   .card1 {
+             width: 200px;
+             height: 200px;
+             background-color: #f2f2f2;
+             border-radius: 5px;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             padding: 10px;
+             margin:2px;
+          }
+        .card1:nth-child(1) {
+              background-color: #fff;
+            }
+        .card1:nth-child(2) {
+              background-color: #fff;
+            }
+
+        .card1:nth-child(3) {
+             background-color: #fff;
+           }
+		.card1:nth-child(4) {
+             background-color: #fff;
+           }
+
+		.card-image {
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+		 .card-description {
+            margin-bottom:10px;
+         }
+    
+		 #contact {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .card {
+             width: 200px;
+             height: 200px;
+             background-color: #f2f2f2;
+             border-radius: 5px;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             padding: 10px;
+             margin:2px;
+          }
+        .card:nth-child(1) {
+              background-color: #c200ff3b;
+            }
+        .card:nth-child(2) {
+              background-color: #00ced1;
+            }
+
+        .card:nth-child(3) {
+             background-color: #0600ff70;
+           }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+             }
+
+          .card-title {
+              font-size: 20px;
+              margin-bottom: 10px;
+               }
+
+            .card-content {
+                 margin-bottom: 10px;
+                }
+	        .section-content {
+               display: flex;
+               justify-content:center;
+           }
+
+		
+		 .faq {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .faq-image {
+            width: 600px;
+            margin-right: 20px;
+        }
+
+        .faq-content {
+            flex: 1;
+        }
+
+        .faq-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .faq-read-more {
+            display: inline-block;
+            padding: 20px 80px;
+            border-radius: 999px;
+            background-color: #ff9900;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        
+        footer {
+            background-color:#1b5479;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+		<a href="#faq">FAQ</a>
+    </div>
+
+    <section id="home">
+	    <div class="description">
+			<h1 style="font-size:30px;color: white;font-weight: bold;">
+			   Y32 SmartWatch</h1>
+              <p style="color:white">Experience the future of wearable technology with our SmartTech smartwatch!</p>
+        </div>
+        <div class="watch-image">
+            <img src="https://www.livemint.com/lm-img/img/2023/04/22/1600x900/itel_smartwatch_2ES_1682147145063_1682147181364.png" alt="Smart Watch">
+        </div>
+        <div class="order-now-button">
+            <a href="#contact">Order Now</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>About</h2>
+        </div>
+		<div class="feature-image">
+        <img src="https://img1.exportersindia.com/product_images/bc-full/2019/10/4631720/bluetooth-smart-watch-1570688865-5110474.jpeg" alt="Smartwatch">
+		<div class="product-details">
+		        <div class="new-release"><b>New Release</b></div>
+				 <p style="color:white">At SmartTech, we are dedicated to creating innovative smartwatches that enhance your lifestyle and keep you connected in a fast-paced world.</p>
+                 <p style="color:white">Our smartwatches combine cutting-edge technology with sleek design, providing a seamless and stylish experience on your wrist.</p>
+                 <p style="color:white">With our smartwatch, you can stay connected, track your fitness, and manage your daily activities effortlessly.</p>
+                 <h1 style="color:white"><b>Key Features:</b></h1>
+                <ul class="right-bullets">
+                    <li style="color:white">Intuitive touch screen display for easy navigation and interaction</li>
+                    <li style="color:white">Comprehensive health and fitness tracking,including heart rate,sleep and more</li>
+                    <li style="color:white">Notifications for calls, messages, emails, and social media alerts</li>
+                    <li style="color:white">Customizable watch faces and interchangeable straps to suit your style</li>
+                    <li style="color:white">Built-in GPS for accurate location tracking during outdoor activities</li>
+                    <li style="color:white">Music control to manage your favorite tracks and playlists</li>
+                    <li style="color:white">Voice assistant integration for hands-free convenience</li>
+                    <li style="color:white">Water resistance for worry-free use in various environments</li>
+                    <li style="color:white">Long-lasting battery life to keep up with your busy schedule</li>
+              </ul>
+            </div>
+		</div>
+            <p style="color:white">At our Smart Watch Company, we are driven by a vision of a connected future where technology seamlessly integrates into our lives to make them easier, more productive, and more enjoyable.We are committed to quality and customer satisfaction. Each smart watch undergoes rigorous testing and quality control to ensure that it meets our high standards. We also provide excellent customer support to assist you with any inquiries or concerns you may have.Join us on this exciting journey and experience the power of our smart watches firsthand.</p>
+			<a href="#" class="about-read-more">Read More</a>
+        </div>
+		
+    </section>
+	 
+	 <section id="features">
+            <h2 class="section-title">Features</h2>
+	<div class="section-content">
+        <div class="card1">
+            <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8s46SwW7Cwp0nuKYD7HBMQe6XjaSJ4Af8aQ&usqp=CAU" alt="Feature 1" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Water Resistance</h2>
+            </div>
+        </div>
+        <div class="card1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNzkIpCVo-_LerFus6E_Au5Dio47h2IY1XKQ&usqp=CAU" alt="Feature 2" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Built-in Gps</h2>
+            </div>
+        </div>
+        <div class="card1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoqsihbpyhgSwssAFYYbkLA2FWBRNqpsQXHQ&usqp=CAU" alt="Feature 3" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Heart Rate Monitoring</h2>
+            </div>
+		</div>
+		
+	   <div class="card1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPcWgn1FeO7UicGRvGAU3GfUeWH5HMHifqw&usqp=CAU" alt="Feature 4" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Pedometer</h2>
+            </div>
+       </div>
+	   <div class="card1">
+            <img src="data:image/jpeg;base64,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" alt="Feature 4" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">Remote Controls</h2>
+            </div>
+       </div>
+   </div>
+        </section>
+
+	 <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="section-content">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBcMJl75_T855Ve8Xj3yW9wnI4UxJMRuM6iAN3DI6HeBdnVkACnC_nmS-yXLXP48ZK-mE&usqp=CAU" alt="Chat Icon" class="card-icon">
+                    <div>
+                        <h3 class="card-title">Chat Now</h3>
+                        <p class="card-content">Chat with our customer support team.</p>
+                        <button>Chat Now</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhIFqTqakCu_CRznkL8agN8l-c178R81guaA&usqp=CAU" alt="Mail Icon" class="card-icon">
+                    <div>
+                        <h3 class="card-title">Mail Us</h3>
+                        <p class="card-content">Send us an email with your questions or concerns.</p>
+                        <button>Mail Us</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVmILK3p-0HvzzsPvMgXYv8hIs879RiC74Mw&usqp=CAU" alt="Call Icon" class="card-icon">
+                    <div>
+                        <h3 class="card-title">Call Us</h3>
+                        <p class="card-content">Call our support team to speak with a representative.</p>
+                        <button>Call Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+	<section id="faq">
+            <div class="faq-title">
+			  <h2>FAQ</h2>
+			</div>
+        <div class="faq">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9euBwX49e4ofN42mm_tbtps31iRUeI-k66JzpYNwVKQ_-_97iFJK9KGjdUOqFHwlX5Sk&usqp=CAU" alt="Image" class="faq-image">
+            <div class="faq-content">
+                <h2 style="font-size:60px;color: black;font-weight: bold;">Have a Question ?</h2>
+                <a href="#" class="faq-read-more">Read More</a>
+            </div>
+        </div>
+	</section>
+    <footer>
+        <p>&copy; 2023 SmartTech Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
